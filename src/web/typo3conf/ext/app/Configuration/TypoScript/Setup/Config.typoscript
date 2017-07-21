@@ -1,6 +1,5 @@
 # Default (German)
 config {
-    disableAllHeaderCode = 1
 
     #real url
     simulateStaticDocuments = 0

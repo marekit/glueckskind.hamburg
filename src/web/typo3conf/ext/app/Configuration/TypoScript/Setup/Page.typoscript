@@ -1,0 +1,89 @@
+page = PAGE
+page {
+    config {
+        noPageTitle = 2
+    }
+
+    headerData {
+        # Title tag
+        10 = COA
+        10 {
+            wrap = <title>|</title>
+
+            10 = TEXT
+            10 {
+                data = page:nav_title // page:title
+            }
+
+            20 = TEXT
+            20 {
+                noTrimWrap = | | |
+                value = |
+            }
+
+            30 = TEXT
+            30 {
+                value = Glückskind hamburg
+            }
+
+
+        }
+    }
+
+    meta {
+        description.field = description
+        viewport = width=device-width, initial-scale=1, shrink-to-fit=no
+    }
+
+    includeCSS {
+        main = EXT:app/Resources/Public/Stylesheets/style.css
+        main {
+            media = screen
+        }
+    }
+
+    includeJSLibs {
+        jQuery = https://code.jquery.com/jquery-3.2.1.min.js
+    }
+
+    includeJS {
+        main = EXT:app/Resources/Public/Javascript/main.js
+    }
+
+    #Page template rendering
+    10 = FLUIDTEMPLATE
+    10 {
+        templateName = TEXT
+        templateName.stdWrap {
+            cObject = TEXT
+            cObject {
+                data = levelfield:-2,backend_layout_next_level,slide
+                override.field = backend_layout
+                split {
+                    token = pagets__
+                    1.current = 1
+                    1.wrap = |
+                }
+            }
+
+            ifEmpty = Default
+        }
+
+        layoutRootPaths.10 = {$plugin.tx_app.view.layoutRootPaths.10}
+        partialRootPaths.10 = {$plugin.tx_app.view.partialRootPaths.10}
+        templateRootPaths.10 = {$plugin.tx_app.view.templateRootPaths.10}Page/
+
+        variables {
+        }
+
+        settings {
+            language = de
+        }
+    }
+
+    includeJSFooterlibs {
+    }
+
+    footerData {
+    }
+}

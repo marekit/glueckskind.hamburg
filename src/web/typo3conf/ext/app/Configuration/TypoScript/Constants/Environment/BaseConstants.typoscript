@@ -1,4 +1,11 @@
 plugin.tx_app {
+
+    view {
+        templateRootPaths.10 = EXT:app/Resources/Private/Templates/
+        partialRootPaths.10 = EXT:app/Resources/Private/Partials/
+        layoutRootPaths.10 = EXT:app/Resources/Private/Layouts/
+    }
+
     settings {
         #do not modify, will be updated upon build (see: before-artifacts-push.yml)
         assets.version = 1
