@@ -1,0 +1,45 @@
+---
+server:
+    install: '1'
+    timezone: Europe/Berlin
+    locale: de_DE.UTF-8
+    packages: [git, curl, imagemagick, sendmail, unzip]
+vagrant_local:
+    install: '1'
+    vm: { base_box: trusty64, hostname: ahoi.glueckskind.hamburg, ip: 192.168.56.126, memory: '1024', sharedfolder: ./, useVagrantCloud: '1', syncType: nfs }
+nginx:
+    install: '1'
+    hosts:
+      -   name: app
+          template: typo3.tpl
+          docroot: /vagrant/src/web
+          docindex: index.php
+          servername: ahoi.glueckskind.hamburg
+      -   name: html
+          template: static.tpl
+          docroot: /vagrant/html
+          docindex: index.php
+          servername: ahoi.html.glueckskind.hamburg
+mysql:
+    install: '1'
+    root_password: ''
+    database: glueckskind
+    user: kapitaen
+    password: kapitaen
+    dump: ''
+    collation: utf8_unicode_ci
+    encoding: utf8
+php:
+    install: '1'
+    ppa: php
+    packages: [php7.0-fpm, php7.0-cli, php7.0-intl, php7.0-mcrypt, php7.0-curl, php7.0-gd, php7.0-imagick, php7.0-mysql, php7.0-xml, php7.0-mbstring, php7.0-dom, php7.0-soap, php7.0-zip]
+xdebug:
+    install: '1'
+    idekey: PHPSTORM
+composer:
+    install: '1'
+nvm:
+    version: v0.30.2
+    node_version: stable
+    user: vagrant
+    global_node_packages: [grunt-cli, uglify-js, uglifycss, bower, yarn]

@@ -1,0 +1,31 @@
+plugin.tx_app{
+    view {
+        templateRootPaths.20 = EXT:app/Resources/Private/Templates/
+        partialRootPaths.20 = EXT:app/Resources/Private/Partials/
+        layoutRootPaths.20 = EXT:app/Resources/Private/Layouts/
+    }
+
+    settings{
+        assets {
+            version = {$plugin.tx_app.settings.assets.version}
+        }
+
+        html {
+            dir = {$plugin.tx_app.settings.html.dir}
+            titlePrefix = {$plugin.tx_app.settings.html.titlePrefix}
+            debug = {$plugin.tx_app.settings.html.debug}
+
+        }
+
+        nav {
+            social {
+                facebookUrl = {$plugin.tx_app.settings.nav.social.facebookUrl}
+                twitterUrl = {$plugin.tx_app.settings.nav.social.twitterUrl}
+                youtubeUrl = {$plugin.tx_app.settings.nav.social.youtubeUrl}
+                instagramUrl = {$plugin.tx_app.settings.nav.social.instagramUrl}
+                xingUrl = {$plugin.tx_app.settings.nav.social.xingUrl}
+                linkedInUrl = {$plugin.tx_app.settings.nav.social.linkedInUrl}
+            }
+        }
+    }
+}

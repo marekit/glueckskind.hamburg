@@ -1,0 +1,9 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:app/Configuration/TypoScript/Constants/Environment/BaseConstants.typoscript">
+
+[applicationContext = Production/Staging]
+    <INCLUDE_TYPOSCRIPT: source="FILE:EXT:app/Configuration/TypoScript/Constants/Environment/StagingConstants.typoscript">
+[end]
+
+[applicationContext = Development]
+    <INCLUDE_TYPOSCRIPT: source="FILE:EXT:app/Configuration/TypoScript/Constants/Environment/DevelopmentConstants.typoscript">
+[end]

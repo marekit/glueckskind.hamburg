@@ -1,0 +1,31 @@
+---
+- name: Install Nginx
+  become: yes
+  become_method: sudo
+  apt: pkg=nginx state=latest
+
+- name: Remove default nginx site
+  become: yes
+  become_method: sudo
+  file: path={{ item }} state=absent
+  with_items:
+    - /etc/nginx/sites-available/default
+    - /etc/nginx/sites-enabled/default
+    - /var/log/nginx/access.log
+    - /var/log/nginx/error.log
+
+- name: Add nginx sites
+  become: yes
+  become_method: sudo
+  template: src={{ item.template }} dest=/etc/nginx/sites-available/{{ item.name }}
+  with_items: "{{ nginx.hosts }}"
+
+- name: Enable nginx sites
+  become: yes
+  become_method: sudo
+  file:
+    path: /etc/nginx/sites-enabled/{{ item.name }}
+    src: /etc/nginx/sites-available/{{ item.name }}
+    state: link
+  notify: restart nginx
+  with_items: "{{ nginx.hosts }}"

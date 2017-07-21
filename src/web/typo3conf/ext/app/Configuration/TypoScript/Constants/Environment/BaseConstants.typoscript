@@ -1,0 +1,23 @@
+plugin.tx_app {
+    settings {
+        #do not modify, will be updated upon build (see: before-artifacts-push.yml)
+        assets.version = 1
+
+        html {
+            dir = ltr
+            titlePrefix = Glückskind
+            debug = 0
+        }
+
+        nav {
+            social {
+                facebookUrl =
+                twitterUrl =
+                youtubeUrl =
+                instagramUrl =
+                xingUrl =
+                linkedInUrl =
+            }
+        }
+    }
+}

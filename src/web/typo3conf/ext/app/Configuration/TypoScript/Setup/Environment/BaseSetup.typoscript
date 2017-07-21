@@ -1,0 +1,11 @@
+# Library top-level-object
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:app/Configuration/TypoScript/Setup/Library.typoscript">
+
+# Config top-level-object
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:app/Configuration/TypoScript/Setup/Config.typoscript">
+
+# Plugins top-level-object
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:app/Configuration/TypoScript/Setup/Plugin" extensions="typoscript">
+
+# Page top-level-object
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:app/Configuration/TypoScript/Setup/Page.typoscript">
