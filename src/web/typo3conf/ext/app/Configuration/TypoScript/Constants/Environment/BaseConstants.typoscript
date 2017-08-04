@@ -26,5 +26,10 @@ plugin.tx_app {
                 linkedInUrl =
             }
         }
+
+        storagePids {
+            productsAndCategories = 2
+            embroiderThemesAndCategories = 3
+        }
     }
 }

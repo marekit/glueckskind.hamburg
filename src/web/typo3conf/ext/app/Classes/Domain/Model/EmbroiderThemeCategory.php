@@ -1,22 +1,21 @@
 <?php
 namespace Ek\App\Domain\Model;
 
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
-class EmbroiderThemeCategory extends AbstractEntity
+class EmbroiderThemeCategory extends BasicEntity
 {
-    const STORAGE_PID = 2;
+    const PRODUCT_STORAGE_IDENTIFIER = 'embroiderThemesAndCategories';
 
     /**
-     * EmbroiderThemeCategory constructor.
-     *
-     * @param int $pid
+     * Embroidertheme constructor.
      */
-    public function __construct($pid = self::STORAGE_PID)
+    public function __construct()
     {
+        parent::__construct();
+
         $this->initStorageObjects();
-        $this->setPid($pid);
+        $this->setPid($this->settings['storagePids'][self::PRODUCT_STORAGE_IDENTIFIER]);
     }
 
     /**
@@ -86,7 +85,8 @@ class EmbroiderThemeCategory extends AbstractEntity
      *
      * @return void
      */
-    public function addEmbroiderTheme(\Ek\App\Domain\Model\EmbroiderTheme $embroiderTheme) {
+    public function addEmbroiderTheme(\Ek\App\Domain\Model\EmbroiderTheme $embroiderTheme)
+    {
         $this->embroiderThemes->attach($embroiderTheme);
     }
 
@@ -97,7 +97,8 @@ class EmbroiderThemeCategory extends AbstractEntity
      *
      * @return void
      */
-    public function removeEmbroiderTheme(\Ek\App\Domain\Model\EmbroiderTheme $embroiderThemeToRemove) {
+    public function removeEmbroiderTheme(\Ek\App\Domain\Model\EmbroiderTheme $embroiderThemeToRemove)
+    {
         $this->embroiderThemes->detach($embroiderThemeToRemove);
     }
 
@@ -106,7 +107,8 @@ class EmbroiderThemeCategory extends AbstractEntity
      *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ek\App\Domain\Model\EmbroiderTheme> $embroiderThemes
      */
-    public function getEmbroiderThemes() {
+    public function getEmbroiderThemes()
+    {
         return $this->embroiderThemes;
     }
 
@@ -116,7 +118,8 @@ class EmbroiderThemeCategory extends AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ek\App\Domain\Model\EmbroiderTheme> $embroiderThemes
      * @return void
      */
-    public function setEmbroiderThemes(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $embroiderThemes) {
+    public function setEmbroiderThemes(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $embroiderThemes)
+    {
         $this->embroiderThemes = $embroiderThemes;
     }
 }

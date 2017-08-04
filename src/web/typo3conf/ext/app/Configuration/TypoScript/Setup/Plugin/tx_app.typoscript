@@ -1,20 +1,19 @@
 plugin.tx_app{
+
     view {
         templateRootPaths.20 = EXT:app/Resources/Private/Templates/
         partialRootPaths.20 = EXT:app/Resources/Private/Partials/
         layoutRootPaths.20 = EXT:app/Resources/Private/Layouts/
     }
 
-    settings{
-        assets {
-            version = {$plugin.tx_app.settings.assets.version}
-        }
+    settings {
+        #do not modify, will be updated upon build (see: before-artifacts-push.yml)
+        assets.version = {$plugin.tx_app.settings.assets.version}
 
         html {
             dir = {$plugin.tx_app.settings.html.dir}
             titlePrefix = {$plugin.tx_app.settings.html.titlePrefix}
             debug = {$plugin.tx_app.settings.html.debug}
-
         }
 
         nav {
@@ -26,6 +25,11 @@ plugin.tx_app{
                 xingUrl = {$plugin.tx_app.settings.nav.social.xingUrl}
                 linkedInUrl = {$plugin.tx_app.settings.nav.social.linkedInUrl}
             }
+        }
+
+        storagePids {
+            productsAndCategories = {$plugin.tx_app.settings.storagePids.productsAndCategories}
+            embroiderThemesAndCategories = {$plugin.tx_app.settings.storagePids.embroiderThemesAndCategories}
         }
     }
 }

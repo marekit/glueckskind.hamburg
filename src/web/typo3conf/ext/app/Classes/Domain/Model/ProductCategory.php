@@ -1,22 +1,21 @@
 <?php
 namespace Ek\App\Domain\Model;
 
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
-class ProductCategory extends AbstractEntity
+class ProductCategory extends BasicEntity
 {
-    const STORAGE_PID = 2;
+    const PRODUCT_STORAGE_IDENTIFIER = 'productsAndCategories';
 
     /**
      * EmbroiderThemeCategory constructor.
-     *
-     * @param int $pid
      */
-    public function __construct($pid = self::STORAGE_PID)
+    public function __construct()
     {
+        parent::__construct();
+
         $this->initStorageObjects();
-        $this->setPid($pid);
+        $this->setPid($this->settings['storagePids'][self::PRODUCT_STORAGE_IDENTIFIER]);
     }
 
     /**
@@ -86,7 +85,8 @@ class ProductCategory extends AbstractEntity
      *
      * @return void
      */
-    public function addProduct(\Ek\App\Domain\Model\Product $product) {
+    public function addProduct(\Ek\App\Domain\Model\Product $product)
+    {
         $this->products->attach($product);
     }
 
@@ -97,7 +97,8 @@ class ProductCategory extends AbstractEntity
      *
      * @return void
      */
-    public function removeProduct(\Ek\App\Domain\Model\Product $productToRemove) {
+    public function removeProduct(\Ek\App\Domain\Model\Product $productToRemove)
+    {
         $this->products->detach($productToRemove);
     }
 
@@ -106,7 +107,8 @@ class ProductCategory extends AbstractEntity
      *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ek\App\Domain\Model\Product> $products
      */
-    public function getProducts() {
+    public function getProducts()
+    {
         return $this->products;
     }
 
@@ -116,7 +118,8 @@ class ProductCategory extends AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ek\App\Domain\Model\Product> $products
      * @return void
      */
-    public function setProducts(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $products) {
+    public function setProducts(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $products)
+    {
         $this->products = $products;
     }
 }

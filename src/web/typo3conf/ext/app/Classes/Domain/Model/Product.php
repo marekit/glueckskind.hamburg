@@ -1,22 +1,21 @@
 <?php
 namespace Ek\App\Domain\Model;
 
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
-class Product extends AbstractEntity
+class Product extends BasicEntity
 {
-    const STORAGE_PID = 2;
+    const PRODUCT_STORAGE_IDENTIFIER = 'productsAndCategories';
 
     /**
      * EmbroiderThemeCategory constructor.
-     *
-     * @param int $pid
      */
-    public function __construct($pid = self::STORAGE_PID)
+    public function __construct()
     {
+        parent::__construct();
+
         $this->initStorageObjects();
-        $this->setPid($pid);
+        $this->setPid($this->settings['storagePids'][self::PRODUCT_STORAGE_IDENTIFIER]);
     }
 
     /**
@@ -156,7 +155,8 @@ class Product extends AbstractEntity
      *
      * @return void
      */
-    public function addProductCategory(\Ek\App\Domain\Model\ProductCategory $productCategory) {
+    public function addProductCategory(\Ek\App\Domain\Model\ProductCategory $productCategory)
+    {
         $this->productCategories->attach($productCategory);
     }
 
@@ -167,7 +167,8 @@ class Product extends AbstractEntity
      *
      * @return void
      */
-    public function removeProduct(\Ek\App\Domain\Model\ProductCategory $productCategoryToRemove) {
+    public function removeProduct(\Ek\App\Domain\Model\ProductCategory $productCategoryToRemove)
+    {
         $this->productCategories->detach($productCategoryToRemove);
     }
 
@@ -176,7 +177,8 @@ class Product extends AbstractEntity
      *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ek\App\Domain\Model\ProductCategory> $productCategories
      */
-    public function getProductCategories() {
+    public function getProductCategories()
+    {
         return $this->productCategories;
     }
 
@@ -186,7 +188,8 @@ class Product extends AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ek\App\Domain\Model\Product> $productCategories
      * @return void
      */
-    public function setProductCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $productCategories) {
+    public function setProductCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $productCategories)
+    {
         $this->productCategories = $productCategories;
     }
 
@@ -197,7 +200,8 @@ class Product extends AbstractEntity
      *
      * @return void
      */
-    public function addEmbroiderThemeSuggestion(\Ek\App\Domain\Model\EmbroiderTheme $embroiderThemeSuggestion) {
+    public function addEmbroiderThemeSuggestion(\Ek\App\Domain\Model\EmbroiderTheme $embroiderThemeSuggestion)
+    {
         $this->embroiderThemeSuggestions->attach($embroiderThemeSuggestion);
     }
 
@@ -208,7 +212,8 @@ class Product extends AbstractEntity
      *
      * @return void
      */
-    public function removeEmbroiderThemeSuggestion(\Ek\App\Domain\Model\EmbroiderTheme $embroiderThemeSuggestionToRemove) {
+    public function removeEmbroiderThemeSuggestion(\Ek\App\Domain\Model\EmbroiderTheme $embroiderThemeSuggestionToRemove)
+    {
         $this->embroiderThemeSuggestions->detach($embroiderThemeSuggestionToRemove);
     }
 
@@ -217,7 +222,8 @@ class Product extends AbstractEntity
      *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ek\App\Domain\Model\EmbroiderTheme> $embroiderThemeSuggestions
      */
-    public function getEmbroiderThemeSuggestions() {
+    public function getEmbroiderThemeSuggestions()
+    {
         return $this->embroiderThemeSuggestions;
     }
 
@@ -227,7 +233,8 @@ class Product extends AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ek\App\Domain\Model\EmbroiderTheme> $embroiderThemeSuggestions
      * @return void
      */
-    public function setEmbroiderThemeSuggestions(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $embroiderThemeSuggestions) {
+    public function setEmbroiderThemeSuggestions(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $embroiderThemeSuggestions)
+    {
         $this->embroiderThemeSuggestions = $embroiderThemeSuggestions;
     }
 }

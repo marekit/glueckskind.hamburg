@@ -1,22 +1,21 @@
 <?php
 namespace Ek\App\Domain\Model;
 
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
-class EmbroiderTheme extends AbstractEntity
+class EmbroiderTheme extends BasicEntity
 {
-    const STORAGE_PID = 2;
+    const PRODUCT_STORAGE_IDENTIFIER = 'embroiderThemesAndCategories';
 
     /**
      * Embroidertheme constructor.
-     *
-     * @param int $pid
      */
-    public function __construct($pid = self::STORAGE_PID)
+    public function __construct()
     {
+        parent::__construct();
+
         $this->initStorageObjects();
-        $this->setPid($pid);
+        $this->setPid($this->settings['storagePids'][self::PRODUCT_STORAGE_IDENTIFIER]);
     }
 
     /**
