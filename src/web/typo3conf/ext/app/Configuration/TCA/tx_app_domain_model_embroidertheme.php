@@ -22,7 +22,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'title',
-        'iconfile' => 'EXT:app/Resources/Public/Icons/General.svg',
+        'iconfile' => 'EXT:app/Resources/Public/Icons/EmbroiderTheme.svg',
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, title',

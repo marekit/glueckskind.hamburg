@@ -30,3 +30,22 @@ call_user_func(function () {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_app_domain_model_embroidertheme',
         'EXT:app/Resources/Private/Language/locallang_csh_tx_app_domain_model_embroidertheme.xlf');
 });
+
+/**
+ * Add configuration for folders which contains custom system records
+ */
+/** Products */
+$TCA['pages']['columns']['module']['config']['items'][] = [
+    'LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:pages.module.tx_mwstorefinder_domain_model_product',
+    'product',
+    'EXT:app/Resources/Public/Icons/Product.svg',
+];
+$TCA['pages']['ctrl']['typeicon_classes']['contains-product'] = 'apps-pagetree-folder-contains-product';
+
+/** Embroider themes*/
+$TCA['pages']['columns']['module']['config']['items'][] = [
+    'LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:pages.module.tx_mwstorefinder_domain_model_embroiderTheme',
+    'embroiderTheme',
+    'EXT:app/Resources/Public/Icons/EmbroiderTheme.svg',
+];
+$TCA['pages']['ctrl']['typeicon_classes']['contains-embroiderTheme'] = 'apps-pagetree-folder-contains-embroiderTheme';

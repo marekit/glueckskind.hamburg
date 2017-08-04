@@ -117,6 +117,14 @@
             <trans-unit id="tx_app_domain_model_embroidertheme.palette.assignments">
                 <source>Zuordnungen</source>
             </trans-unit>
+
+            <!-- pages -->
+            <trans-unit id="pages.module.tx_mwstorefinder_domain_model_product">
+                <source>Product</source>
+            </trans-unit>
+            <trans-unit id="pages.module.tx_mwstorefinder_domain_model_embroiderTheme">
+                <source>Embroidertheme</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
