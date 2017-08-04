@@ -30,13 +30,13 @@ return [
     'types' => [
         '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource;;1,
 --palette--;LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:tx_app_domain_model_embroidertheme.palette.data;data,
---palette--;LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:tx_app_domain_model_embroidertheme.palette.assignments;assignments,
+--palette--;LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:tx_app_domain_model_embroidertheme.palette.categories;categories,
 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, hidden, starttime, endtime'],
     ],
     'palettes' => [
         '1' => ['showitem' => ''],
         'data' => ['showitem' => 'title, --linebreak--, image'],
-        'assignments' => ['showitem' => 'embroider_theme_categories, products'],
+        'categories' => ['showitem' => 'embroider_theme_categories, products'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -148,7 +148,7 @@ return [
                 'multiple' => 1,
                 'foreign_table' => 'tx_app_domain_model_embroiderthemecategory',
                 'MM' => 'tx_app_embroidertheme_embroiderthemecategory_mm',
-                'foreign_table_where' => ' AND tx_app_domain_model_embroiderthemecategory.pid=###CURRENT_PID### ORDER BY tx_app_domain_model_embroiderthemecategory.title ',
+                'foreign_table_where' => ' ORDER BY tx_app_domain_model_embroiderthemecategory.title ',
                 'minitems' => 0,
                 'maxitems' => 99,
             ],
@@ -158,12 +158,13 @@ return [
             'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_embroidertheme.products',
             'config' => [
                 'type' => 'select',
-                'renderType' => 'selectCheckBox',
+                'renderType' => 'selectMultipleSideBySide',
+                'readOnly' => 1,
                 'multiple' => 1,
                 'foreign_table' => 'tx_app_domain_model_product',
                 'MM' => 'tx_app_product_embroidertheme_mm',
                 'MM_opposite_field' => 'embroider_themes',
-                'foreign_table_where' => ' AND tx_app_domain_model_product.pid=###CURRENT_PID### ORDER BY tx_app_domain_model_product.title ',
+                'foreign_table_where' => ' ORDER BY tx_app_domain_model_product.title ',
                 'minitems' => 0,
                 'maxitems' => 99,
             ],

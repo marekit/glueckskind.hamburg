@@ -210,7 +210,7 @@ return [
                 'multiple' => 1,
                 'foreign_table' => 'tx_app_domain_model_embroidertheme',
                 'MM' => 'tx_app_product_embroidertheme_mm',
-                'foreign_table_where' => ' AND tx_app_domain_model_embroidertheme.pid=###CURRENT_PID### ORDER BY tx_app_domain_model_embroidertheme.title ',
+                'foreign_table_where' => ' ORDER BY tx_app_domain_model_embroidertheme.title ',
                 'minitems' => 0,
                 'maxitems' => 99,
             ],
