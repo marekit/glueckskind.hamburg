@@ -27,6 +27,7 @@ class EmbroiderThemeCategory extends AbstractEntity
     protected function initStorageObjects()
     {
         $this->embroiderThemes = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->image = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
