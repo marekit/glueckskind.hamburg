@@ -9,24 +9,19 @@ page {
         10 = COA
         10 {
             wrap = <title>|</title>
-
             10 = TEXT
             10 {
                 data = page:nav_title // page:title
             }
-
             20 = TEXT
             20 {
                 noTrimWrap = | | |
                 value = |
             }
-
             30 = TEXT
             30 {
                 value = Glückskind hamburg
             }
-
-
         }
     }
 
@@ -65,7 +60,6 @@ page {
                     1.wrap = |
                 }
             }
-
             ifEmpty = Default
         }
 

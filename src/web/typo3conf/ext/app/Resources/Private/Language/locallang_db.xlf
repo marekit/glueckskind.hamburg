@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2016-12-13T16:49:10Z" product-name="app">
+        <header/>
+        <body>
+
+            <!-- - - - - - - - - -->
+            <!-- - - - TCA - - - -->
+            <!-- - - - - - - - - -->
+
+            <!-- tx_app_domain_model_productcategory -->
+            <trans-unit id="pages.module.tx_app_domain_model_productcategory">
+                <source>Produktkategorie</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_productcategory">
+                <source>Produktkategorie</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_productcategory.title">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_productcategory.image">
+                <source>Kategoriebild</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_productcategory.palette.data">
+                <source>Daten</source>
+            </trans-unit>
+
+            <!-- tx_app_domain_model_embroiderthemecategory -->
+            <trans-unit id="tx_app_domain_model_embroiderthemecategory">
+                <source>Stickmotivkategorie</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_embroiderthemecategory.title">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_embroiderthemecategory.image">
+                <source>Kategoriebild</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_embroiderthemecategory.embroider_themes">
+                <source>Stickmotive</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_embroiderthemecategory.palette.data">
+                <source>Daten</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_embroidertheme.embroider_themes">
+                <source>Motive</source>
+            </trans-unit>
+
+            <!-- tx_app_domain_model_embroidertheme -->
+            <trans-unit id="tx_app_domain_model_embroidertheme">
+                <source>Stickmotiv</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_embroidertheme.title">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_embroidertheme.image">
+                <source>Motiv</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_embroidertheme.embroider_theme_categories">
+                <source>Kategorien</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_embroidertheme.palette.data">
+                <source>Daten</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_embroidertheme.palette.categories">
+                <source>Kategorien</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
