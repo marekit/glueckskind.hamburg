@@ -27,6 +27,7 @@ class EmbroiderTheme extends AbstractEntity
     protected function initStorageObjects()
     {
         $this->embroiderThemeCategories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->products = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->image = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
@@ -46,6 +47,12 @@ class EmbroiderTheme extends AbstractEntity
      * @lazy
      */
     protected $embroiderThemeCategories;
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ek\App\Domain\Model\Product>
+     * @lazy
+     */
+    protected $products;
 
     /**
      * @return string
@@ -82,23 +89,23 @@ class EmbroiderTheme extends AbstractEntity
     /**
      * Adds a Embroider theme category
      *
-     * @param \EK\App\Domain\Model\EmbroiderThemeCategory $EmbroiderThemeCategory
+     * @param \EK\App\Domain\Model\EmbroiderThemeCategory $embroiderThemeCategory
      * @return void
      */
-    public function addCategory(\EK\App\Domain\Model\EmbroiderThemeCategory $EmbroiderThemeCategory)
+    public function addCategory(\EK\App\Domain\Model\EmbroiderThemeCategory $embroiderThemeCategory)
     {
-        $this->embroiderThemeCategories->attach($EmbroiderThemeCategory);
+        $this->embroiderThemeCategories->attach($embroiderThemeCategory);
     }
 
     /**
      * Removes a Category
      *
-     * @param \EK\App\Domain\Model\EmbroiderThemeCategory $EmbroiderThemeCategoryToRemove The Category to be removed
+     * @param \EK\App\Domain\Model\EmbroiderThemeCategory $embroiderThemeCategoryToRemove The Category to be removed
      * @return void
      */
-    public function removeCategory(\EK\App\Domain\Model\EmbroiderThemeCategory $EmbroiderThemeCategoryToRemove)
+    public function removeCategory(\EK\App\Domain\Model\EmbroiderThemeCategory $embroiderThemeCategoryToRemove)
     {
-        $this->embroiderThemeCategories->detach($EmbroiderThemeCategoryToRemove);
+        $this->embroiderThemeCategories->detach($embroiderThemeCategoryToRemove);
     }
 
     /**
@@ -115,5 +122,43 @@ class EmbroiderTheme extends AbstractEntity
     public function setEmbroiderThemeCategory(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $embroiderThemeCategories)
     {
         $this->embroiderThemeCategories = $embroiderThemeCategories;
+    }
+
+    /**
+     * Adds a Product
+     *
+     * @param \EK\App\Domain\Model\Product $product
+     * @return void
+     */
+    public function addCProduct(\EK\App\Domain\Model\Product $product)
+    {
+        $this->embroiderThemeCategories->attach($product);
+    }
+
+    /**
+     * Removes a Product
+     *
+     * @param \EK\App\Domain\Model\Product $productToRemove The product to be removed
+     * @return void
+     */
+    public function removeProduct(\EK\App\Domain\Model\Product $productToRemove)
+    {
+        $this->products->detach($productToRemove);
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ek\App\Domain\Model\Product> $products
+     */
+    public function getProducts(): \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+    {
+        return $this->products;
+    }
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ek\App\Domain\Model\Product> $products
+     */
+    public function setProducts(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $products)
+    {
+        $this->products = $products;
     }
 }

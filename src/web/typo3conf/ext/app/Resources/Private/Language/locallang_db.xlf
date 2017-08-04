@@ -8,6 +8,50 @@
             <!-- - - - TCA - - - -->
             <!-- - - - - - - - - -->
 
+            <!-- tx_app_domain_model_product -->
+            <trans-unit id="pages.module.tx_app_domain_model_product">
+                <source>Produkt</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_product">
+                <source>Produkt</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_product.title">
+                <source>Produktname</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_product.teaser_text">
+                <source>Teaser text</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_product.description">
+                <source>Beschreibung</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_product.price">
+                <source>Preis</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_product.delivery_time">
+                <source>Lieferzeit</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_product.product_categories">
+                <source>Kategorien</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_product.images">
+                <source>Produktbilder</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_product.design_suggestions">
+                <source>Designvorschläge / Varianten</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_product.embroider_theme_suggestions">
+                <source>Stickmotivvorschläge / Varianten</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_product.palette.data">
+                <source>Produkt</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_product.palette.images">
+                <source>Media</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_product.palette.assigments">
+                <source>Zuordnungen</source>
+            </trans-unit>
+
             <!-- tx_app_domain_model_productcategory -->
             <trans-unit id="pages.module.tx_app_domain_model_productcategory">
                 <source>Produktkategorie</source>
@@ -21,8 +65,14 @@
             <trans-unit id="tx_app_domain_model_productcategory.image">
                 <source>Kategoriebild</source>
             </trans-unit>
+            <trans-unit id="tx_app_domain_model_productcategory.products">
+                <source>Produkte</source>
+            </trans-unit>
             <trans-unit id="tx_app_domain_model_productcategory.palette.data">
-                <source>Daten</source>
+                <source>Produktkategorie</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_productcategory.palette.assignments">
+                <source>Zuordnungen</source>
             </trans-unit>
 
             <!-- tx_app_domain_model_embroiderthemecategory -->
@@ -39,10 +89,10 @@
                 <source>Stickmotive</source>
             </trans-unit>
             <trans-unit id="tx_app_domain_model_embroiderthemecategory.palette.data">
-                <source>Daten</source>
+                <source>Stickmotivkategorie</source>
             </trans-unit>
-            <trans-unit id="tx_app_domain_model_embroidertheme.embroider_themes">
-                <source>Motive</source>
+            <trans-unit id="tx_app_domain_model_embroiderthemecategory.palette.assignments">
+                <source>Zuordnungen</source>
             </trans-unit>
 
             <!-- tx_app_domain_model_embroidertheme -->
@@ -58,11 +108,14 @@
             <trans-unit id="tx_app_domain_model_embroidertheme.embroider_theme_categories">
                 <source>Kategorien</source>
             </trans-unit>
-            <trans-unit id="tx_app_domain_model_embroidertheme.palette.data">
-                <source>Daten</source>
+            <trans-unit id="tx_app_domain_model_embroidertheme.products">
+                <source>Produkte</source>
             </trans-unit>
-            <trans-unit id="tx_app_domain_model_embroidertheme.palette.categories">
-                <source>Kategorien</source>
+            <trans-unit id="tx_app_domain_model_embroidertheme.palette.data">
+                <source>Stickmotiv</source>
+            </trans-unit>
+            <trans-unit id="tx_app_domain_model_embroidertheme.palette.assignments">
+                <source>Zuordnungen</source>
             </trans-unit>
         </body>
     </file>

@@ -1,7 +1,7 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:tx_app_domain_model_embroidertheme',
+        'title' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:tx_app_domain_model_product',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -29,14 +29,17 @@ return [
     ],
     'types' => [
         '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource;;1,
---palette--;LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:tx_app_domain_model_embroidertheme.palette.data;data,
---palette--;LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:tx_app_domain_model_embroidertheme.palette.assignments;assignments,
+--palette--;LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:tx_app_domain_model_product.palette.data;data,
+--palette--;LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:tx_app_domain_model_product.palette.images;images,
+--palette--;LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:tx_app_domain_model_product.palette.assigments;assigments,
 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, hidden, starttime, endtime'],
     ],
     'palettes' => [
         '1' => ['showitem' => ''],
-        'data' => ['showitem' => 'title, --linebreak--, image'],
-        'assignments' => ['showitem' => 'embroider_theme_categories, products'],
+        'data' => ['showitem' => 'title, price, delivery_time, --linebreak--, teaser_text, description'],
+        'images' => ['showitem' => 'images, design_suggestions'],
+        'assigments' => ['showitem' => 'product_categories, embroider_theme_suggestions'],
+
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -63,8 +66,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_app_domain_model_embroidertheme',
-                'foreign_table_where' => 'AND tx_app_domain_model_embroidertheme.pid=###CURRENT_PID### AND tx_app_domain_model_embroidertheme.sys_language_uid IN (-1,0)',
+                'foreign_table' => 'tx_app_domain_model_product',
+                'foreign_table_where' => 'AND tx_app_domain_model_product.pid=###CURRENT_PID### AND tx_app_domain_model_product.sys_language_uid IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -121,49 +124,93 @@ return [
         ],
         'title' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_embroidertheme.title',
+            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_product.title',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 100,
                 'eval' => 'trim, required',
             ],
         ],
-        'image' => [
+        'teaser_text' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_embroidertheme.image',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('image', [
-                'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference',
-                ],
-                'minitems' => 0,
-                'maxitems' => 1,
-            ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']),
+            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_product.teaser_text',
+            'config' => [
+                'type' => 'text',
+                'enableRichtext' => true,
+            ],
         ],
-        'embroider_theme_categories' => [
+        'description' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_embroidertheme.embroider_theme_categories',
+            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_product.description',
+            'config' => [
+                'type' => 'text',
+                'enableRichtext' => true,
+            ],
+        ],
+        'price' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_product.price',
+            'config' => [
+                'type' => 'input',
+                'size' => 10,
+                'eval' => 'trim, required',
+            ],
+        ],
+        'delivery_time' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_product.delivery_time',
+            'config' => [
+                'type' => 'input',
+                'size' => 10,
+                'eval' => 'trim',
+            ],
+        ],
+        'product_categories' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_product.product_categories',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectCheckBox',
                 'multiple' => 1,
-                'foreign_table' => 'tx_app_domain_model_embroiderthemecategory',
-                'MM' => 'tx_app_embroidertheme_embroiderthemecategory_mm',
-                'foreign_table_where' => ' AND tx_app_domain_model_embroiderthemecategory.pid=###CURRENT_PID### ORDER BY tx_app_domain_model_embroiderthemecategory.title ',
+                'foreign_table' => 'tx_app_domain_model_productcategory',
+                'MM' => 'tx_app_product_productcategory_mm',
+                'foreign_table_where' => ' AND tx_app_domain_model_productcategory.pid=###CURRENT_PID### ORDER BY tx_app_domain_model_productcategory.title ',
                 'minitems' => 0,
                 'maxitems' => 99,
             ],
         ],
-        'products' => [
+        'images' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_embroidertheme.products',
+            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_product.images',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('images', [
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference',
+                ],
+                'minitems' => 0,
+                'maxitems' => 10,
+            ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']),
+        ],
+        'design_suggestions' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_product.design_suggestions',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('design_suggestions', [
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference',
+                ],
+                'minitems' => 0,
+                'maxitems' => 10,
+            ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']),
+        ],
+        'embroider_theme_suggestions' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_product.embroider_theme_suggestions',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectCheckBox',
                 'multiple' => 1,
-                'foreign_table' => 'tx_app_domain_model_product',
+                'foreign_table' => 'tx_app_domain_model_embroidertheme',
                 'MM' => 'tx_app_product_embroidertheme_mm',
-                'MM_opposite_field' => 'embroider_themes',
-                'foreign_table_where' => ' AND tx_app_domain_model_product.pid=###CURRENT_PID### ORDER BY tx_app_domain_model_product.title ',
+                'foreign_table_where' => ' AND tx_app_domain_model_embroidertheme.pid=###CURRENT_PID### ORDER BY tx_app_domain_model_embroidertheme.title ',
                 'minitems' => 0,
                 'maxitems' => 99,
             ],

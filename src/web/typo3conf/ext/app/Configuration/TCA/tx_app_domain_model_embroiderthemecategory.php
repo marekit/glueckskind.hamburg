@@ -30,13 +30,13 @@ return [
     'types' => [
         '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource;;1,
 --palette--;LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:tx_app_domain_model_embroiderthemecategory.palette.data;data,
---palette--;LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:tx_app_domain_model_embroiderthemecategory.palette.embroider_themes;embroider_themes,
+--palette--;LLL:EXT:app/Resources/Private/Language/locallang_db.xlf:tx_app_domain_model_embroiderthemecategory.palette.assignments;assignments,
 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, hidden, starttime, endtime'],
     ],
     'palettes' => [
         '1' => ['showitem' => ''],
         'data' => ['showitem' => 'title, --linebreak--, image'],
-        'embroider_themes' => ['showitem' => 'embroider_themes'],
+        'assignments' => ['showitem' => 'embroider_themes'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -141,7 +141,7 @@ return [
         ],
         'embroider_themes' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_embroiderthemecatgory.embroider_themes',
+            'label' => 'LLL:EXT:app/Resources/Private/Language/locallang_db.xml:tx_app_domain_model_embroiderthemecategory.embroider_themes',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectCheckBox',

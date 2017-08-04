@@ -21,6 +21,9 @@ call_user_func(function () {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_app_domain_model_productcategory',
         'EXT:app/Resources/Private/Language/locallang_csh_tx_app_domain_model_productcategory.xlf');
 
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_app_domain_model_product',
+        'EXT:app/Resources/Private/Language/locallang_csh_tx_app_domain_model_product.xlf');
+
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_app_domain_model_embroiderthemecategory',
         'EXT:app/Resources/Private/Language/locallang_csh_tx_app_domain_model_embroiderthemecategory.xlf');
 
