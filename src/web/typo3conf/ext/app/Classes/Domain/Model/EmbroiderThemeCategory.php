@@ -101,7 +101,7 @@ class EmbroiderThemeCategory extends AbstractEntity
     }
 
     /**
-     * Returns the Seminars
+     * Returns the embroider themes
      *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ek\App\Domain\Model\EmbroiderTheme> $embroiderThemes
      */
@@ -110,7 +110,7 @@ class EmbroiderThemeCategory extends AbstractEntity
     }
 
     /**
-     * Sets the Seminars
+     * Sets the embroider themes
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ek\App\Domain\Model\EmbroiderTheme> $embroiderThemes
      * @return void
